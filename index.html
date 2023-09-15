@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sideral Pré-Moldados - Lajes Alveolares Protendidas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body background="">
+    <header>
+        <div class="div-contatos">
+          <img class="header-img" src="imagens/sideral-logo.jpg" alt="Logo da Sideral Pré-Moldados">
+          <ul class="header-contatos">
+              <li class="header-ctt">  
+                <img class="ctt-img" src="imagens/whatsapp-logo-color.avif" alt="Logo WhatsApp">
+                <p class="ctt-txt">(XX)XXXXX-XXXX</p>
+                
+              </li>
+              <li class="header-ctt">
+                <img class="ctt-img" src="imagens/gmail-logo.png" alt="Logo Gmail">
+                <p class="ctt-txt">(XX)XXXXX-XXXX</p>
+            </li>
+          </ul>
+        </div>
+
+      <div class="div-links">
+        <nav class="header-links">
+          <ul class="lista-links">
+            <li><a href="#quem-somos">Quem somos?</a></li>
+            <li><a href="#diferencial">Diferencial</a></li>
+            <li><a href="#obras">Obras Realizadas</a></li>
+            <li><a href="#orcamento">Solicite seu Orçamento</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="conteudo">
+    <!-- Landing Section -->
+      <section class="landing-section">
+        <h1 class="landing-title">Soluções para a sua obra!</h1>
+      </section>
+  
+    <!-- Seção "Quem somos?" -->
+    
+      <section class="quem-somos">
+        <div class="quem-somos-txt">
+          <h2 class="titulo-quem-somos">Quem somos?</h2>
+          <p class="p-quem-somos">A Sideral Pré-moldados Produz lajes unidirecionais, com 125 cm de largura pelo comprimento que o projeto especifica. 
+            São produzidas em alturas padrão de 14, 16, 21, 25, 31 cm em pistas continuas de 130 metros por máquinas extrusoras de concreto, num processo contínuo. 
+            </p>
+        </div>
+        <img class="quem-somos-img" src="IAimages/montagemAIcortada.jpg" alt="Imagem da empresa">
+      </section>
+      <!-- Seção "Diferencial" -->
+      <section class="diferencial">
+        <img class="diferencial-img" src="imagens/fabrica2.jpg" alt="Imagem das lajes alveolares protendidas">
+        <div class="diferencial-txt">
+          <h2 class="titulo-diferencial">Por que escolher<br>Lajes Alveolares Protendidas?</h2>
+          <ul class="lista-diferencial">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+          </ul>
+        </div>
+        
+      </section>
+      <!-- Seção "Obras Realizadas" -->
+      <section class="obras">
+        <h2 class="obras-titulo">Obras Realizadas</h2>
+        <div class="carrossel-obras">
+          <div class="gallery-wrapper">
+            <div class="gallery">
+              <img class="item current" src="https://source.unsplash.com/random/300x300/?construction" alt="">
+              <img class="item" src="https://source.unsplash.com/random/300x300/?building" alt="">
+              <img class="item" src="https://source.unsplash.com/random/300x300/?house" alt="">
+              <img class="item" src="https://source.unsplash.com/random/300x300/?skyscraper" alt="">
+              <img class="item" src="https://source.unsplash.com/random/300x300/?shopping mall" alt="">
+              <buttom class="arrow-right control" aria-label="next">◀</buttom>
+              <buttom class="arrow-left control" aria-label="previous">▶</buttom>
+            </div>
+          </div>          
+        </div>
+      </section>
+      <!-- Seção "Solicite seu Orçamento" -->
+      <section class="section-orc">
+        <div>
+          <h2 class="titulo-orc"><strong>Solicite Seu Orçamento</strong></h2>
+        </div>
+        <form method="get" autocomplete="on">
+          <fieldset class="grupo">
+            <div class="campo">
+              <label for="empresa"><strong>Nome da Empresa:</strong></label>
+              <input type="text" name="empresa" id="empresa" required >
+            </div>
+            <div class="campo">
+              <label for="nome"><strong>Nome do Contato:</strong></label>
+              <input type="text" name="nome" id="nome">
+            </div>
+          </fieldset>
+        
+              <div class="campo">
+                <label for="email"><strong>Email:</strong></label>
+                <input type="email" name="Email" id="Email" required>
+              </div>
+              <div class="campo">
+                <label for="telefone"><strong>Contato:</strong></label>
+                <input type="text" onblur="tiraHifen(this), mascaraDeTelefone(this)"  name="telefone" id="telefone" onfocus="tiraHifen(this)" autocomplete="tel" maxlength="15">
+              </div>  
+        
+              <div class="campo">
+                <label for="orc"><strong>Orçamento:</strong></label>
+                <textarea name="orc" id="orc" rows="6"></textarea required>
+              </div>
+              <div class="campo">
+                <label for="projeto"><strong>Anexar Projeto:</strong><input type="file" name="projeto"></label>
+              </div>
+              <button class="enviar" type="submit">Enviar Orçamento</button>
+        
+        </form>
+      </section>
+    </main>
+        <!-- Rodapé -->
+  <footer>
+    <img src="logo.png" alt="Logo da Sideral Pré-Moldados">
+    <p>Entre em contato:</p>
+    <p>Número de telefone: (XX) XXXX-XXXX</p>
+    <p>E-mail: contato@sideralpremoldados.com</p>
+    <p>Créditos de imgame <a target="_blank" href="https://br.freepik.com/fotos-gratis/foto-horizontal-de-um-canteiro-de-obras-com-andaimes-sob-um-ceu-azul-claro_12448614.htm#query=constru%C3%A7%C3%A3o%20pr%C3%A9%20moldado%20c%C3%A9u&position=0&from_view=search&track=ais">Imagem de wirestock</a></p>
+    <!--Referências: https://br.freepik.com/fotos-gratis/foto-horizontal-de-um-canteiro-de-obras-com-andaimes-sob-um-ceu-azul-claro_12448614.htm#query=constru%C3%A7%C3%A3o%20pr%C3%A9%20moldado%20c%C3%A9u&position=0&from_view=search&track=ais-->
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>
