@@ -49,13 +49,35 @@ table {
     border-spacing: 0;
 }
 
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding);
+  width: 100%;
+  max-width: 100vw;
+}
+
+body{
+  background-color: #0B273B;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/*Cabeçalho*/
+
 header{
+  z-index:2;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #0B273B ;
-  padding: 16px;
+  background-color: #0b273bf6;
+  padding-block: 16px;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  border-bottom: #cccccce8 0.4px solid;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px -10px 32px 0px #cccccc;
 }
 
 .div-contatos{
@@ -70,8 +92,10 @@ header{
 }
 
 .header-img{
-  height: 100px;
-  border-radius: 10%;
+  height: 59px;
+  background-color: #fffefe;
+  padding: 10px;
+  border-radius: 3%;
 }
 
 .ctt-img{
@@ -88,6 +112,8 @@ header{
 .ctt-txt{
   padding-left: 10px;
   font-family: 'Montserrat', sans-serif;
+  color: #cccccc;
+  text-underline-offset: 4px;
 }
 
 .lista-links{
@@ -121,10 +147,31 @@ header nav ul li a:hover {
 }
 
 /*Landing Section*/
-.landing-section{
-  background-image: url(imagens/foto-landing-final-1920.jpg);
-  height: 906px;
-  position: relative;
+
+.carrossel-landing{
+  overflow: hidden;
+}
+
+.container{
+  display: flex;
+  transition: 0.5s ease-in-out;
+  transform: translateX(0);
+  max-height: 88vh;
+  background-color: red;
+}
+
+.item-ld{
+  object-fit:cover;
+  left: 0;
+  width: var(--displayWidth);
+}
+
+.filtro{
+  position: absolute;
+  height: 100vh;
+  width: 600%;
+  background-color: #061e2f9c;
+  z-index: 999;
 }
 
 .landing-title{
@@ -139,10 +186,14 @@ header nav ul li a:hover {
   transform: translate(-50%, -50%);
 }
 
+/*Main*/
+
 .conteudo{
   font-family:'Montserrat', sans-serif;
   color: #0B273B;
 }
+
+/*Quem somos?*/
 
 .quem-somos{
   display: flex;
@@ -150,15 +201,16 @@ header nav ul li a:hover {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  padding-inline: 340px;
   background-color: #cccccc;
-  gap: 24px;
+  box-shadow: 0px 0px 32px 0px #1a1919 ;
+  gap: 10px;
 }
 
 .quem-somos-txt{
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  width: 710px;
   gap: 20px;
 }
 
@@ -175,7 +227,10 @@ header nav ul li a:hover {
 
 .quem-somos-img{
   height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+/*Diferencial*/
 
 .diferencial{
   display: flex;
@@ -184,32 +239,35 @@ header nav ul li a:hover {
   align-items: center;
   padding: 30px;
   background-color: #eee;
-  gap: 24px;
-  padding-inline: 340px;
+  gap: 100px;
 }
 
 .diferencial-img{
   height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .diferencial-txt{
   display: flex;
   flex-direction: column;
-  align-items:end;
+  align-items: center;
   gap: 20px;
 }
 
 .titulo-diferencial{
   font-size: 40px;
   font-weight: bold;
-  text-align: end;
+  text-align: center;
 }
 
 .lista-diferencial{
-  font-size: 18px;
+  text-align: center;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.5;
 }
+
+/*Obras*/
 
 .obras{
   display: flex;
@@ -228,9 +286,10 @@ header nav ul li a:hover {
 
 .carrossel-obras{
   position: relative;
-  padding: 15px;
-  max-width: 640px;
-  margin: 0 auto;
+  padding: 0;
+  max-width: 890px;
+  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .gallery-wrapper{
@@ -239,8 +298,9 @@ header nav ul li a:hover {
 
 .gallery{
   display: flex;
-  flex-flow: row nowrap;
+  transition: 0.7s ease-in-out;
   gap: 15px;
+  transform: translateX(0);
 }
 
 .arrow-left{
@@ -250,7 +310,7 @@ header nav ul li a:hover {
   right: 0;
   bottom: 0;
   font-size: 30px;
-  line-height: 300px;
+  line-height: 500px;
   width: 40px;
   text-align: center;
   color: #ffffff;
@@ -272,7 +332,7 @@ header nav ul li a:hover {
   right: auto;
   bottom: 0;
   font-size: 30px;
-  line-height: 300px;
+  line-height: 500px;
   width: 40px;
   text-align: center;
   color: #ffffff;
@@ -283,8 +343,7 @@ header nav ul li a:hover {
 }
 
 .item{
-  width: 300px;
-  height: 300px;
+  height: 500px;
   flex-shrink: 0;
   transition: all 600ms ease-in-out;
   opacity: 0.6;
@@ -296,20 +355,217 @@ header nav ul li a:hover {
 
 .gallery-wrapper{
   overflow: hidden;
+  scroll-padding-top: 100px;
 }
 
-.section-orc{
-  font-family:'Montserrat', sans-serif;
+/*Rodapé*/
+
+.rodape{
   background-color: #0B273B;
   color: #cccccc;
+  font-family:'Montserrat', sans-serif;
+  gap: 18px;
+  padding-block: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  border-top: #eee solid 0.4px;
+  box-shadow: 0px -10px 32px 0px #cccccc;
 }
 
-.titulo-orc{
-  font-size: 32px;
-  font-weight: 500;
-  margin-top: 12px;
+.titulo-rodape{
+  font-weight: 800;
+  font-size: 28px;
+}
+
+.rodape-ctt{
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  font-size: 1.2em;
+}
+
+.rodape-ul{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.rodape-li{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rodape-img{
+  height: 30px;
+}
+
+.rodape-txt{
+  color: #cccccc;
+}
+
+@media (max-width: 450px){
+  header{
+    flex-direction: column;
+    gap: 0px;
+    position: relative;
+  }
+
+  .header-img{
+    height: 45px;
+  }
+
+  .div-contatos{
+    flex-direction: column;
+    gap:0px;
+  }
+
+  .ctt-img{
+    height: 0px;
+  }
+
+  .ctt-txt{
+    font-size: 0px;
+    padding-left: 0px;
+  }
+
+  .header-contatos{
+    gap: 0x;
+    align-items: center;
+  }
+
+  .lista-links{
+    gap: 12px;
+    flex-direction: column;
+  }
+  header nav ul li {
+    display: inline-block;
+    margin: 0px;
+  }
+
+  header nav ul li a {
+    text-decoration: none;
+    color:#ffffff;
+    font-size:14px;
+    display: flex;
+    text-align: center;
+    text-decoration:underline;
+    text-underline-offset: 2px;
+  }
+
+  .container{
+    max-height: 70vh;
+  }
+
+  .filtro{
+    width: 1200%;
+  }
+
+  .landing-title{
+    font-size: 24px;
+  }
+
+  .quem-somos{
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    box-shadow: none;
+  }
+
+  .quem-somos-txt{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .quem-somos-img{
+    height: 220px;
+    margin-top: 5px;  
+  }
+
+  .titulo-quem-somos{
+    font-size: 17px;
+  }
+
+  .p-quem-somos{
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .diferencial{
+    flex-direction: column-reverse;
+    gap: 10px;
+    position: relative;
+  }
+
+  .diferencial-txt{
+    align-items: center;
+    gap: 10px;
+  }
+
+  .diferencial-img{
+    height: 200px;
+  }
+
+  .titulo-diferencial{
+    font-size: 17px;
+  }
+
+  .lista-diferencial{
+    font-size: 12px;
+  }
+
+  .carrossel-obras{
+    padding: 15px;
+    max-width: 330px;
+    margin: 0;
+  }
+
+  .gallery{
+    gap: 10px
+  }
+
+  .obras{
+    gap: 8px;
+  }
+
+  .obras-titulo{
+    font-size: 24px;
+  }
+
+  .arrow-right, .arrow-left{
+    line-height: 185px;
+  }
+
+  .item{
+    height: 185px;
+  }
+
+  .rodape{
+    gap: 6px;
+  }
+
+  .rodape-txt{
+    font-size: 12px;
+  }
+
+  .rodape-ul{
+    gap: 8px;
+    
+  }
+
+  .rodape-li{
+    gap: 6px;
+  }
+
+  .titulo-rodape{
+    font-size: 12px;
+  }
+
+  .rodape-img{
+    height: 12px;
+  }
 }
